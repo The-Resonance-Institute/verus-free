@@ -11,25 +11,28 @@ anywhere. No form, no card, no time limit.
 
 ## Get it
 
-1. **Download** [verus-free.zip](https://github.com/The-Resonance-Institute/verus-free/releases/latest/download/verus-free.zip)
-   (about 540 MB) onto a Linux machine with Docker.
-2. **Unzip it and run one command** in the folder:
-   ```bash
-   sh start.sh
-   ```
-   It loads VERUS, starts it, and prints the address to open and the first password.
-3. **Connect your ERP** with a read-only login (the scripts are in the download) and press **Connect**. Then
-   **Run the year**.
+**On Windows** (any PC or server that can reach your ERP's database; no administrator rights, no Docker):
 
-The full guide is [INSTALL.md](INSTALL.md), and it is in the download too, with a page to forward to IT.
+1. **Download** [VERUS-Free-Setup.exe](https://github.com/The-Resonance-Institute/verus-free/releases/latest/download/VERUS-Free-Setup.exe)
+   (about 130 MB) and run it.
+2. **Start menu, VERUS Free.** The first start takes a couple of minutes; then your browser opens VERUS and a box
+   shows the first password.
+3. **Connect your ERP** with a read-only login (Setup, Add source) and press **Connect**. Then **Run the year**.
+
+**On Linux with Docker:** download [verus-free.zip](https://github.com/The-Resonance-Institute/verus-free/releases/latest/download/verus-free.zip)
+(about 540 MB), unzip it and run `sh start.sh`. The guide is [INSTALL.md](INSTALL.md).
 
 ## What it needs
 
-- A Linux machine, recommended: Ubuntu 22.04 or 24.04, 16 GB of memory, 4 CPUs, on the plant's network where it can
-  reach the ERP's database. Docker Desktop on Windows or macOS works to try it on a laptop.
-- A read-only login to the ERP's database.
+- A Windows PC or server (Windows 10, 11 or Server 2016 and later, 64-bit), 8 GB of memory or more, that can reach
+  the ERP's database; or a Linux machine with Docker.
+- A read-only login to the ERP's database. On SQL Server, Microsoft's ODBC Driver 17 or 18 for SQL Server on the
+  Windows machine; most machines that reach SQL Server already have it.
 - Microsoft Dynamics AX 2012, Epicor Kinetic and Infor CloudSuite Industrial (SyteLine) are mapped with no AI model.
   Any other ERP with a database needs a model key once, to work out its tables.
+
+**Windows may warn** that it does not recognise the installer ("Windows protected your PC"): choose More info, then
+Run anyway. The installer is not yet code-signed.
 
 ## What you get, free, to keep
 
