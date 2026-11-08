@@ -1,26 +1,25 @@
 # VERUS Free
 
-**Last year your plant lost money nobody saw. Find out how much. Free.**
+**Last year your plant lost money nobody saw. Find out how much. Free for 30 days.**
 
 VERUS Free reads the last twelve months of your own ERP and shows you every problem it would have caught: the scrap
 spikes, the customers slipping on delivery, the orders gone past due, the key account gone quiet. Each one ranked by
 what it cost you, with the numbers behind it, and one page to print for whoever signs.
 
-It runs on one machine inside your network, reads your ERP with a login that cannot write, and sends nothing
-anywhere. No form, no card, no time limit.
+It runs on one machine inside your network and reads your ERP with a login that cannot write. None of your data
+ever comes to us. Thirty days free, no card. **Get it at [www.verusops.com/free](https://www.verusops.com/free).**
 
 ## Get it
 
 **On Windows** (any PC or server that can reach your ERP's database; no administrator rights, no Docker):
 
-1. **Download** [VERUS-Free-Setup.exe](https://github.com/The-Resonance-Institute/verus-free/releases/latest/download/VERUS-Free-Setup.exe)
-   (about 130 MB) and run it.
+1. **Download** it from [www.verusops.com/free](https://www.verusops.com/free) (about 130 MB) and run it.
 2. **Start menu, VERUS Free.** The first start takes a couple of minutes; then your browser opens VERUS and a box
-   shows the first password.
+   shows the first password. Then your work email and company start your 30 days.
 3. **Connect your ERP** with a read-only login (Setup, Add source) and press **Connect**. Then **Run the year**.
 
-**On Linux with Docker:** download [verus-free.zip](https://github.com/The-Resonance-Institute/verus-free/releases/latest/download/verus-free.zip)
-(about 540 MB), unzip it and run `sh start.sh`. The guide is [INSTALL.md](INSTALL.md).
+**On Linux with Docker:** download the kit from [www.verusops.com/free](https://www.verusops.com/free) (about 540 MB),
+unzip it and run `sh start.sh`. The guide is [INSTALL.md](INSTALL.md).
 
 ## What it needs
 
@@ -34,7 +33,7 @@ anywhere. No form, no card, no time limit.
 **Windows may warn** that it does not recognise the installer ("Windows protected your PC"): choose More info, then
 Run anyway. The installer is not yet code-signed.
 
-## What you get, free, to keep
+## What you get, free for 30 days
 
 - **The year you missed:** every problem VERUS's starter agents would have raised in the last twelve months, ranked by
   dollars, with "Show the numbers" on each, and a printable report.
@@ -50,13 +49,15 @@ screens are in VERUS Free's menu with a lock; their code is not in the download.
 
 ## Your data
 
-VERUS Free runs inside your network. It never calls home: no telemetry, no usage reporting, no update checks. It
-cannot write to your ERP; there is no code path for it. The code that touches your database is open to read in
+VERUS Free runs inside your network, and none of your data ever comes to us. To run the trial it sends us your work
+email, company and a code made from the machine when you start it, then at most once a day the trial's identifier,
+that code and the version. It cannot write to your ERP; there is no code path for it. The code that touches your database is open to read in
 [VERUS Open](https://github.com/The-Resonance-Institute/verus-open).
 
 ## Terms
 
-Free to use for your own business under [TERMS.md](TERMS.md). The open-source libraries inside are listed, with their
+Free for 30 days for your own business under [TERMS.md](TERMS.md); after that it stops until you buy a license, and
+everything you set up is kept. The open-source libraries inside are listed, with their
 licenses, in the download (`THIRD_PARTY.md`, `THIRD_PARTY_LICENSES.txt`).
 
 ## Help

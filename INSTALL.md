@@ -1,15 +1,16 @@
-# Installing VERUS Free 0.1.0
+# Installing VERUS Free 0.2.0
 
 From an empty machine to the year your plant missed, with this page alone. VERUS Free is the data health check, a
 headline board per plant for one company, and the year you missed: every problem VERUS would have caught in the last
-twelve months, ranked by what it cost. It is free, with no time limit, under the terms in `TERMS.md`.
+twelve months, ranked by what it cost. It is free for 30 days under the terms in `TERMS.md`: on first sign-in you give a work email and company to start
+the 30 days. After them VERUS stops until you buy a license, and everything you set up is kept.
 
 If you would rather not do this yourself, we set it up with your IT team, free: contact@resonanceinstitutellc.com.
 
 ## What is in this folder
 
 - `start.sh`: one command to load, start and say where to sign in.
-- `verus-free-0.1.0.tar`: VERUS itself, as a Docker image. Nothing else is downloaded except Docker's database
+- `verus-free-0.2.0.tar`: VERUS itself, as a Docker image. Nothing else is downloaded except Docker's database
   image.
 - `docker-compose.yml`: the three containers (its database, the screens with the API, and a worker).
 - `it-request.md`: a page to forward to IT as it is.
@@ -57,7 +58,7 @@ Sign out and back in, then `docker compose version` should print a version.
    prints the address to open, the user name (`admin@verus.local`) and the first password.
 2. **Sign in.** Open the address it printed. VERUS asks for a new password at once.
 
-   *By hand instead, or on Windows or a Mac with Docker Desktop:* `docker load -i verus-free-0.1.0.tar`, then
+   *By hand instead, or on Windows or a Mac with Docker Desktop:* `docker load -i verus-free-0.2.0.tar`, then
    `docker compose up -d`; the first password is shown by `docker compose exec api cat /data/initial_admin_password`
    (on Windows, in PowerShell). Port 8080 taken: a file named `.env` here holding `VERUS_PORT=8090`.
 3. **Connect the ERP.** Setup, Add source.
@@ -68,9 +69,9 @@ Sign out and back in, then `docker compose version` should print a version.
      Onboarding shows each stage. Where it is not sure, Review asks a few short questions, with a sample of your own
      rows.
    - Microsoft Dynamics AX 2012, Epicor Kinetic and Infor CloudSuite Industrial (SyteLine) are mapped with no AI
-     model. Any other ERP needs one to work out its tables, once: copy `config/verus.example.yaml` to
-     `config/verus.yaml`, put `ANTHROPIC_API_KEY=` and your key in `.env`, and run `sh start.sh` again. Its spend is
-     capped in that file ($500 a month unless you lower it), and every call is counted on the Onboarding screen.
+     model. Any other ERP needs one to work out its tables, once: Setup, AI model. Choose Claude, OpenAI or a model
+     on your own network, paste the key, press Test, set the most it may spend in a month, and Save; every call is
+     counted on the Onboarding screen.
      Nothing else in VERUS Free uses a model.
 4. **Run the year.** The year you missed, "Run the year". It reads a year of records: minutes on a small system, a
    few hours on a large one. You can leave the page while it works. When it is done, "Print the report" makes the
@@ -90,7 +91,9 @@ found: www.verusops.com/pricing.
 ## Network
 
 - **Inbound:** port 8080 (or yours), from the users' network only. Put your usual TLS in front of it.
-- **Outbound while running:** nothing. No telemetry, no usage reporting, no update checks: VERUS never calls home.
+- **Outbound while running:** to www.verusops.com (HTTPS), to start the trial, then at most once a day while someone
+  is using VERUS: the trial's identifier, a code made from the machine, and the version. Never any of your data. With
+  no route out, VERUS shows a machine code and a page to get the key from on any other device.
 - **To the ERP:** the database's own port, read only. VERUS cannot write to it: there is no code path for it.
 
 Every VERUS process runs as an unprivileged user (uid 10001), never root. If you mount a folder for VERUS to read
@@ -100,7 +103,7 @@ files from, make it readable by uid 10001.
 
 ```bash
 docker compose down -v
-docker image rm verus-free:0.1.0
+docker image rm verus-free:0.2.0
 ```
 
 The machine is clean, and the ERP was never touched.
