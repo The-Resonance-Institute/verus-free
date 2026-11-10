@@ -63,6 +63,5 @@ licenses, in the download (`THIRD_PARTY.md`, `THIRD_PARTY_LICENSES.txt`).
 ## Help
 
 Rather have us set it up with your IT team? Free: [www.verusops.com/free](https://www.verusops.com/free) or
-contact@resonanceinstitutellc.com.
+contact@verusops.com.
 
-VERUS is made by The Resonance Institute, LLC.
